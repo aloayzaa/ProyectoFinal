@@ -15,8 +15,6 @@ public class DepositoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deposito);
-
-
         TextView tvnombreusuario = (TextView) findViewById(R.id.tvNombreUsuario);
         if(Util.nombre_empleado.toString().equalsIgnoreCase("")){
 
@@ -25,13 +23,7 @@ public class DepositoActivity extends AppCompatActivity {
             this.finish();
         }
         tvnombreusuario.setText("Usuario: " + Util.nombre_empleado);
-
-
-
     }
-
-
-
 
     public void onClickAceptar(View view)
     {

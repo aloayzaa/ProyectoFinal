@@ -71,5 +71,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         this.finish();
     }
-
+    public void onClickRegCliente(View view)
+    {
+        Intent intent = new Intent(getApplicationContext(),RegistroCliente.class);
+        startActivity(intent);
+        this.finish();
+    }
 }

@@ -21,7 +21,8 @@
         <activity android:name=".MovimientosActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".DepositoActivity" />
-        <activity android:name=".RetiroActivity"></activity>
+        <activity android:name=".RetiroActivity" />
+        <activity android:name=".RegistroCliente"></activity>
     </application>
 
 </manifest>

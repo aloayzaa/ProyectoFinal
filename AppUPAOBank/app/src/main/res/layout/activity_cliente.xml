@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.upao.appupaobank.ClienteActivity">
 
-    <TextView android:text="Codigo" android:layout_width="match_parent"
+    <TextView android:text="Dni:" android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView" />
 

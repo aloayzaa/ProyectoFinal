@@ -65,6 +65,7 @@ public class MovimientosActivity extends AppCompatActivity
                 throw new Exception("Cuenta no existe.");
             }
             //Procesar el Resultado
+
             JSONObject json = new JSONObject(jsonResult);
             //Obtener el elemento que contiene los movimientos
             JSONArray jArray = json.getJSONArray("movimientos");

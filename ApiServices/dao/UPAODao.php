@@ -10,7 +10,7 @@ class UPAODao extends MyPDO {
             $query = "select chr_cliecodigo, vch_cliepaterno, vch_cliematerno, 
                 vch_clienombre, chr_cliedni, vch_clieciudad, vch_cliedireccion, 
                 vch_clietelefono, vch_clieemail 
-                from Cliente where chr_cliecodigo = ?";
+                from Cliente where chr_cliedni = ?";
             $stm = $this->pdo->prepare($query);
             $stm->bindParam(1, $codigo);
             $stm->execute();
@@ -87,6 +87,23 @@ order by m.dtt_movifecha desc ";
             $stm->bindParam(2, $importe);
             $stm->bindParam(3, $clave);
             $stm->bindParam(4, $empleado);
+            // llamar al procedimiento almacenado
+            $stm->execute();
+            $estado = $stm->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            throw $e;
+        }
+        return $estado;
+    }
+        public function registrarCliente($ap_paterno,$ap_materno,$nombres,$dni,$correo) {
+        $estado = null;
+        try {
+            $stm = $this->pdo->prepare("call usp_registrar_cliente(?,?,?,?,?)");
+            $stm->bindParam(1, $ap_paterno);
+            $stm->bindParam(2, $ap_materno);
+            $stm->bindParam(3, $nombres);
+              $stm->bindParam(4, $dni);
+                $stm->bindParam(5, $correo);
             // llamar al procedimiento almacenado
             $stm->execute();
             $estado = $stm->fetch(PDO::FETCH_ASSOC);

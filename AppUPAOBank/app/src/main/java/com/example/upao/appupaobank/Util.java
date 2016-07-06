@@ -22,13 +22,13 @@ public class Util {
     private Util()
     {
     }
-    //url= ConsultarClientes.php?codigo=0001
+    //url= ConsultarCliente.php?codigo=00001
     //url= ConsultarMovimientos.php?cuenta=00100001
     public static String execJsonGetRequest(String url) throws ClientProtocolException, IOException
     {
         HttpClient httpclient = new DefaultHttpClient();
         //HttpGet httpGet = new HttpGet("http://172.16.30.194:8086/ApiServices/service/"+url);
-        HttpGet httpGet = new HttpGet("http://10.1.74.15:8086/ApiServices/service/"+url);
+        HttpGet httpGet = new HttpGet("http://192.168.10.21:8082/ApiServices/service/"+url);
         httpGet.setHeader("content-type","application/json");
         HttpResponse response = httpclient.execute(httpGet);
         String jsonResult = EntityUtils.toString(response.getEntity());
